@@ -128,36 +128,28 @@ struct high_pressure_fuel_pump_s {
 	 */
 	float m_pressureTarget_kPa = (float)0;
 	/**
-	 * offset 20
-	 */
-	float hpfp_p_control_percent = (float)0;
-	/**
-	 * offset 24
-	 */
-	float hpfp_i_control_percent = (float)0;
-	/**
 	 * "GDI: next lobe N"
-	 * offset 28
+	 * offset 20
 	 */
 	angle_t nextLobe = (angle_t)0;
 	/**
 	 * GDI: valve activation angle
 	 * units: v
-	 * offset 32
+	 * offset 24
 	 */
 	float di_nextStart = (float)0;
 	/**
 	 * "GDI: HPFP activation angle"
-	 * offset 36
+	 * offset 28
 	 */
 	float HpfdActivationPhase = (float)0;
 	/**
 	 * "GDI: HPFP deactivation angle"
-	 * offset 40
+	 * offset 32
 	 */
 	float HpfdDeactivationPhase = (float)0;
 };
-static_assert(sizeof(high_pressure_fuel_pump_s) == 44);
+static_assert(sizeof(high_pressure_fuel_pump_s) == 36);
 
 // end
 // this section was generated automatically by rusEFI tool config_definition_base-all.jar based on (unknown script) controllers/engine_cycle/high_pressure_fuel_pump.txt

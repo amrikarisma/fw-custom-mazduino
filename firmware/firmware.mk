@@ -1,3 +1,3 @@
-BOARDCPPSRC += \
-    $(BOARD_DIR)/firmware/hardware/board_hw_test.cpp \
-    $(BOARD_DIR)/board_configuration.cpp \
+BOARDCPPSRC =  $(BOARD_DIR)/board_configuration.cpp \
+    $(BOARD_DIR)/firmware/pinouts.cpp \
+    $(BOARD_DIR)/default_tune.cpp \

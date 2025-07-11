@@ -1,6 +1,6 @@
-! example of .ini file templating option
 #define ts_show_etb_pins false
+#define ts_show_software_knock true
+#define ts_show_injectionPinMode true
+#define ts_show_output_diag true
+#define MAX_TPS_PPS_DISCREPANCY 10
 
-
-! example of table size override
-#define IGN_TRIM_SIZE 8

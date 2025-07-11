@@ -17,200 +17,189 @@ struct electronic_throttle_s {
 	 */
 	float trim = (float)0;
 	/**
-	 * offset 8
-	 */
-	float boardEtbAdjustment = (float)0;
-	/**
 	 * "ETB: luaAdjustment"
 	 * units: %
-	 * offset 12
+	 * offset 8
 	 */
 	float luaAdjustment = (float)0;
 	/**
 	 * "DC: wastegatePosition"
 	 * units: %
-	 * offset 16
+	 * offset 12
 	 */
 	float m_wastegatePosition = (float)0;
 	/**
-	 * "EBT: last PID dT"
-	 * units: mS
-	 * offset 20
-	 */
-	float m_lastPidDtMs = (float)0;
-	/**
-	 * offset 24
+	 * offset 16
 	 */
 	percent_t etbFeedForward = (percent_t)0;
 	/**
-	 * Integral error
-	 * offset 28
+	 * offset 20
 	 */
-	float integralError = (float)0;
+	float etbIntegralError = (float)0;
 	/**
 	 * ETB: target for current pedal
 	 * units: %
-	 * offset 32
+	 * offset 24
 	 */
 	float etbCurrentTarget = (float)0;
 	/**
 	 * Adjusted target
 	 * units: %
-	 * offset 36
+	 * offset 28
 	 */
 	scaled_channel<int16_t, 100, 1> m_adjustedTarget = (int16_t)0;
 	/**
 	 * need 4 byte alignment
 	 * units: units
-	 * offset 38
+	 * offset 30
 	 */
-	uint8_t alignmentFill_at_38[2] = {};
+	uint8_t alignmentFill_at_30[2] = {};
 	/**
-	offset 40 bit 0 */
+	offset 32 bit 0 */
 	bool etbRevLimitActive : 1 {};
 	/**
-	offset 40 bit 1 */
+	offset 32 bit 1 */
 	bool jamDetected : 1 {};
 	/**
-	offset 40 bit 2 */
+	offset 32 bit 2 */
 	bool validPlantPosition : 1 {};
 	/**
-	offset 40 bit 3 */
-	bool unusedBit_14_3 : 1 {};
+	offset 32 bit 3 */
+	bool unusedBit_12_3 : 1 {};
 	/**
-	offset 40 bit 4 */
-	bool unusedBit_14_4 : 1 {};
+	offset 32 bit 4 */
+	bool unusedBit_12_4 : 1 {};
 	/**
-	offset 40 bit 5 */
-	bool unusedBit_14_5 : 1 {};
+	offset 32 bit 5 */
+	bool unusedBit_12_5 : 1 {};
 	/**
-	offset 40 bit 6 */
-	bool unusedBit_14_6 : 1 {};
+	offset 32 bit 6 */
+	bool unusedBit_12_6 : 1 {};
 	/**
-	offset 40 bit 7 */
-	bool unusedBit_14_7 : 1 {};
+	offset 32 bit 7 */
+	bool unusedBit_12_7 : 1 {};
 	/**
-	offset 40 bit 8 */
-	bool unusedBit_14_8 : 1 {};
+	offset 32 bit 8 */
+	bool unusedBit_12_8 : 1 {};
 	/**
-	offset 40 bit 9 */
-	bool unusedBit_14_9 : 1 {};
+	offset 32 bit 9 */
+	bool unusedBit_12_9 : 1 {};
 	/**
-	offset 40 bit 10 */
-	bool unusedBit_14_10 : 1 {};
+	offset 32 bit 10 */
+	bool unusedBit_12_10 : 1 {};
 	/**
-	offset 40 bit 11 */
-	bool unusedBit_14_11 : 1 {};
+	offset 32 bit 11 */
+	bool unusedBit_12_11 : 1 {};
 	/**
-	offset 40 bit 12 */
-	bool unusedBit_14_12 : 1 {};
+	offset 32 bit 12 */
+	bool unusedBit_12_12 : 1 {};
 	/**
-	offset 40 bit 13 */
-	bool unusedBit_14_13 : 1 {};
+	offset 32 bit 13 */
+	bool unusedBit_12_13 : 1 {};
 	/**
-	offset 40 bit 14 */
-	bool unusedBit_14_14 : 1 {};
+	offset 32 bit 14 */
+	bool unusedBit_12_14 : 1 {};
 	/**
-	offset 40 bit 15 */
-	bool unusedBit_14_15 : 1 {};
+	offset 32 bit 15 */
+	bool unusedBit_12_15 : 1 {};
 	/**
-	offset 40 bit 16 */
-	bool unusedBit_14_16 : 1 {};
+	offset 32 bit 16 */
+	bool unusedBit_12_16 : 1 {};
 	/**
-	offset 40 bit 17 */
-	bool unusedBit_14_17 : 1 {};
+	offset 32 bit 17 */
+	bool unusedBit_12_17 : 1 {};
 	/**
-	offset 40 bit 18 */
-	bool unusedBit_14_18 : 1 {};
+	offset 32 bit 18 */
+	bool unusedBit_12_18 : 1 {};
 	/**
-	offset 40 bit 19 */
-	bool unusedBit_14_19 : 1 {};
+	offset 32 bit 19 */
+	bool unusedBit_12_19 : 1 {};
 	/**
-	offset 40 bit 20 */
-	bool unusedBit_14_20 : 1 {};
+	offset 32 bit 20 */
+	bool unusedBit_12_20 : 1 {};
 	/**
-	offset 40 bit 21 */
-	bool unusedBit_14_21 : 1 {};
+	offset 32 bit 21 */
+	bool unusedBit_12_21 : 1 {};
 	/**
-	offset 40 bit 22 */
-	bool unusedBit_14_22 : 1 {};
+	offset 32 bit 22 */
+	bool unusedBit_12_22 : 1 {};
 	/**
-	offset 40 bit 23 */
-	bool unusedBit_14_23 : 1 {};
+	offset 32 bit 23 */
+	bool unusedBit_12_23 : 1 {};
 	/**
-	offset 40 bit 24 */
-	bool unusedBit_14_24 : 1 {};
+	offset 32 bit 24 */
+	bool unusedBit_12_24 : 1 {};
 	/**
-	offset 40 bit 25 */
-	bool unusedBit_14_25 : 1 {};
+	offset 32 bit 25 */
+	bool unusedBit_12_25 : 1 {};
 	/**
-	offset 40 bit 26 */
-	bool unusedBit_14_26 : 1 {};
+	offset 32 bit 26 */
+	bool unusedBit_12_26 : 1 {};
 	/**
-	offset 40 bit 27 */
-	bool unusedBit_14_27 : 1 {};
+	offset 32 bit 27 */
+	bool unusedBit_12_27 : 1 {};
 	/**
-	offset 40 bit 28 */
-	bool unusedBit_14_28 : 1 {};
+	offset 32 bit 28 */
+	bool unusedBit_12_28 : 1 {};
 	/**
-	offset 40 bit 29 */
-	bool unusedBit_14_29 : 1 {};
+	offset 32 bit 29 */
+	bool unusedBit_12_29 : 1 {};
 	/**
-	offset 40 bit 30 */
-	bool unusedBit_14_30 : 1 {};
+	offset 32 bit 30 */
+	bool unusedBit_12_30 : 1 {};
 	/**
-	offset 40 bit 31 */
-	bool unusedBit_14_31 : 1 {};
+	offset 32 bit 31 */
+	bool unusedBit_12_31 : 1 {};
 	/**
 	 * "ETB TPS error counter"
 	 * units: count
-	 * offset 44
+	 * offset 36
 	 */
 	uint16_t etbTpsErrorCounter = (uint16_t)0;
 	/**
 	 * "ETB pedal error counter"
 	 * units: count
-	 * offset 46
+	 * offset 38
 	 */
 	uint16_t etbPpsErrorCounter = (uint16_t)0;
 	/**
-	 * offset 48
+	 * offset 40
 	 */
 	int8_t etbErrorCode = (int8_t)0;
 	/**
-	 * offset 49
+	 * offset 41
 	 */
 	int8_t etbErrorCodeBlinker = (int8_t)0;
 	/**
 	 * ETB traction control
 	 * units: %
-	 * offset 50
+	 * offset 42
 	 */
 	int8_t tcEtbDrop = (int8_t)0;
 	/**
 	 * need 4 byte alignment
 	 * units: units
-	 * offset 51
+	 * offset 43
 	 */
-	uint8_t alignmentFill_at_51[1] = {};
+	uint8_t alignmentFill_at_43[1] = {};
 	/**
 	 * ETB jam timer
 	 * units: sec
-	 * offset 52
+	 * offset 44
 	 */
 	scaled_channel<uint16_t, 100, 1> jamTimer = (uint16_t)0;
 	/**
 	 * ETB with adjustments
 	 * units: %
-	 * offset 54
+	 * offset 46
 	 */
 	int8_t adjustedEtbTarget = (int8_t)0;
 	/**
-	 * offset 55
+	 * offset 47
 	 */
 	uint8_t state = (uint8_t)0;
 };
-static_assert(sizeof(electronic_throttle_s) == 56);
+static_assert(sizeof(electronic_throttle_s) == 48);
 
 // end
 // this section was generated automatically by rusEFI tool config_definition_base-all.jar based on (unknown script) controllers/actuators/electronic_throttle.txt
