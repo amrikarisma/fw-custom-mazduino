@@ -191,6 +191,7 @@ static const LogField fields[] = {
 	{engine->outputChannels.auxLinear3, "Aux linear #3", "", 2},
 	{engine->outputChannels.auxLinear4, "Aux linear #4", "", 2},
 	{engine->outputChannels.fallbackMap, "fallbackMap", "kPa", 1},
+	{engine->outputChannels.effectiveMap, "Effective MAP", "kPa", 1},
 	{engine->outputChannels.instantMAPValue, "Instant MAP", "kPa", 2},
 	{engine->outputChannels.maxLockedDuration, "maxLockedDuration", "us", 0},
 	{engine->outputChannels.canWriteOk, "CAN: Tx OK", "", 0},
@@ -508,6 +509,9 @@ static const LogField fields[] = {
 	{engine->ignitionState.luaTimingMult, "Ign: Lua timing mult", "deg", 2, "Timing"},
 	{engine->ignitionState, 40, 0, "Ign: Lua Spark Skip", ""},
 	{engine->ignitionState.trailingSparkAngle, "Ign: Trailing spark deg", "deg", 2, "Timing"},
+	{engine->ignitionState.rpmForIgnitionTableDot, "rpmForIgnitionTableDot", "", 0},
+	{engine->ignitionState.rpmForIgnitionIdleTableDot, "rpmForIgnitionIdleTableDot", "", 0},
+	{engine->ignitionState.loadForIgnitionTableDot, "loadForIgnitionTableDot", "", 0},
 	{engine->module<KnockController>()->m_knockLevel, "Knock: Current level", "Volts", 2},
 	{engine->module<KnockController>()->m_knockCyl[0], "Knock: Cyl 1", "dBv", 0},
 	{engine->module<KnockController>()->m_knockCyl[1], "Knock: Cyl 2", "dBv", 0},
@@ -652,25 +656,25 @@ static const LogField fields[] = {
 	{*engine->module<BoostController>(), 0, 10, "isBoostControlled", ""},
 #endif
 #if EFI_BOOST_CONTROL
-	{engine->module<BoostController>()->luaTargetAdd, "Boost: Lua target add", "v", 1, "Boost Control"},
+	{engine->module<BoostController>()->luaTargetAdd, "Boost: Lua target add", "percent", 1, "Boost Control"},
 #endif
 #if EFI_BOOST_CONTROL
-	{engine->module<BoostController>()->boostOutput, "Boost: Output", "percent", 2, "Boost Control"},
+	{engine->module<BoostController>()->luaTargetMult, "Boost: Lua target mult", "", 1, "Boost Control"},
 #endif
 #if EFI_BOOST_CONTROL
-	{engine->module<BoostController>()->luaTargetMult, "Boost: Lua target mult", "v", 1, "Boost Control"},
+	{engine->module<BoostController>()->boostControlTarget, "Boost: Target", "kPa", 1, "Boost Control"},
 #endif
 #if EFI_BOOST_CONTROL
-	{engine->module<BoostController>()->openLoopPart, "Boost: Open loop", "v", 1, "Boost Control"},
+	{engine->module<BoostController>()->openLoopPart, "Boost: Open loop", "percent", 1, "Boost Control"},
 #endif
 #if EFI_BOOST_CONTROL
-	{engine->module<BoostController>()->luaOpenLoopAdd, "Boost: Lua open loop add", "v", 1, "Boost Control"},
+	{engine->module<BoostController>()->luaOpenLoopAdd, "Boost: Lua open loop add", "percent", 1, "Boost Control"},
 #endif
 #if EFI_BOOST_CONTROL
 	{engine->module<BoostController>()->boostControllerClosedLoopPart, "Boost: Closed loop", "%", 1, "Boost Control"},
 #endif
 #if EFI_BOOST_CONTROL
-	{engine->module<BoostController>()->boostControlTarget, "Boost: Target", "kPa", 1, "Boost Control"},
+	{engine->module<BoostController>()->boostOutput, "Boost: Output", "percent", 2, "Boost Control"},
 #endif
 	{*engine->module<FanControl1>(), 0, 0, "fan1cranking", ""},
 	{*engine->module<FanControl1>(), 0, 1, "fan1notRunning", ""},
@@ -1006,37 +1010,31 @@ static const LogField fields[] = {
 	{engine->module<IdleController>().unmock(), 12, 5, "isIacTableForCoasting", ""},
 #endif
 #if EFI_PROD_CODE && EFI_IDLE_CONTROL
-	{engine->module<IdleController>().unmock(), 12, 6, "notIdling", ""},
+	{engine->module<IdleController>().unmock(), 12, 6, "Idle: reset", ""},
 #endif
 #if EFI_PROD_CODE && EFI_IDLE_CONTROL
-	{engine->module<IdleController>().unmock(), 12, 7, "Idle: reset", ""},
+	{engine->module<IdleController>().unmock(), 12, 7, "Idle: dead zone", ""},
 #endif
 #if EFI_PROD_CODE && EFI_IDLE_CONTROL
-	{engine->module<IdleController>().unmock(), 12, 8, "Idle: dead zone", ""},
+	{engine->module<IdleController>().unmock(), 12, 8, "isBlipping", ""},
 #endif
 #if EFI_PROD_CODE && EFI_IDLE_CONTROL
-	{engine->module<IdleController>().unmock(), 12, 9, "isBlipping", ""},
+	{engine->module<IdleController>().unmock(), 12, 9, "badTps", ""},
 #endif
 #if EFI_PROD_CODE && EFI_IDLE_CONTROL
-	{engine->module<IdleController>().unmock(), 12, 10, "useClosedLoop", ""},
+	{engine->module<IdleController>().unmock(), 12, 10, "looksLikeRunning", ""},
 #endif
 #if EFI_PROD_CODE && EFI_IDLE_CONTROL
-	{engine->module<IdleController>().unmock(), 12, 11, "badTps", ""},
+	{engine->module<IdleController>().unmock(), 12, 11, "looksLikeCoasting", ""},
 #endif
 #if EFI_PROD_CODE && EFI_IDLE_CONTROL
-	{engine->module<IdleController>().unmock(), 12, 12, "looksLikeRunning", ""},
+	{engine->module<IdleController>().unmock(), 12, 12, "looksLikeCrankToIdle", ""},
 #endif
 #if EFI_PROD_CODE && EFI_IDLE_CONTROL
-	{engine->module<IdleController>().unmock(), 12, 13, "looksLikeCoasting", ""},
+	{engine->module<IdleController>().unmock(), 12, 13, "Idle: coasting", ""},
 #endif
 #if EFI_PROD_CODE && EFI_IDLE_CONTROL
-	{engine->module<IdleController>().unmock(), 12, 14, "looksLikeCrankToIdle", ""},
-#endif
-#if EFI_PROD_CODE && EFI_IDLE_CONTROL
-	{engine->module<IdleController>().unmock(), 12, 15, "Idle: coasting", ""},
-#endif
-#if EFI_PROD_CODE && EFI_IDLE_CONTROL
-	{engine->module<IdleController>().unmock(), 12, 16, "Idle: Closed loop active", ""},
+	{engine->module<IdleController>().unmock(), 12, 14, "Idle: Closed loop active", ""},
 #endif
 #if EFI_PROD_CODE && EFI_IDLE_CONTROL
 	{engine->module<IdleController>().unmock().idleTarget, "Idle: Target RPM", "", 0},
