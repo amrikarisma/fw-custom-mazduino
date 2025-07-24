@@ -3,4 +3,4 @@
 //
 
 #define SIGNATURE_HASH 4016858339
-#define TS_SIGNATURE "rusEFI main.2025.07.23.mazduino.4016858339"
+#define TS_SIGNATURE "rusEFI main.2025.07.24.mazduino.4016858339"
