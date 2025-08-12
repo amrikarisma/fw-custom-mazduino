@@ -6,8 +6,6 @@ BOARDINC += $(BOARD_DIR)/generated/controllers/generated
 # defines SHORT_BOARD_NAME
 include $(BOARD_DIR)/meta-info.env
 
-DDEFS += -DSTM32F407xx
-
 # this would save some flash while being unable to update WBO controller firmware
 DDEFS += -DEFI_WIDEBAND_FIRMWARE_UPDATE=FALSE
 DDEFS += -DRAM_UNUSED_SIZE=100

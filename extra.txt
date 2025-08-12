@@ -1,4 +1,2 @@
 struct_no_prefix extra_s
-bit extraBit
-int extraInt
 end_struct
