@@ -5,8 +5,7 @@ pins:
 
   - id: EFI_ADC_0
     class: analog_inputs
-# getAdcChannelBrainPin in 'stm32_adc.cpp' says EFI_ADC_0 is PA0
-    ts_name: On-board Battery Sense (A0)
+    ts_name: Analog Inputs 0 (A0)
 
   - id: EFI_ADC_1
     class: analog_inputs
@@ -68,14 +67,10 @@ pins:
     class: analog_inputs
     ts_name: Analog Inputs 15 (C5)
 
-  - id: [E2, E2]
+  - id: [D3, D3]
     class: [switch_inputs, event_inputs]
-    ts_name: VR/Hall 1 (E2)
+    ts_name: VR/Hall 1 (D3)
 
-  - id: [E3, E3]
+  - id: [D4, D4]
     class: [switch_inputs, event_inputs]
-    ts_name: VR/Hall 2 (E3)
-
-  - id: [E4, E4]
-    class: [switch_inputs, event_inputs]
-    ts_name: VR/Hall 3 (E4)
+    ts_name: VR/Hall 2 (D4)
