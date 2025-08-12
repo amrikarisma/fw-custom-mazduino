@@ -9,7 +9,7 @@
 	// "features": {},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
-		2222, // ssh on container
+		"2222:22", // ssh on container
 		29002 // simulator
 	],
 	// Use 'postCreateCommand' to run commands after the container is created.
@@ -38,7 +38,10 @@
 				}
 			}
 		}
-	}
+	},
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
+	"mounts": [
+		"source=${env:HOME}/.ssh,target=/root/.ssh,type=bind"
+	]
 }
