@@ -7,9 +7,9 @@
 // Knock is on ADC3
 #define KNOCK_ADC ADCD3
 
-// knock 1 - pin PA3
-#define KNOCK_ADC_CH1 ADC_CHANNEL_IN3
-#define KNOCK_PIN_CH1 Gpio::A3
+// knock 1 - pin PA6
+#define KNOCK_ADC_CH1 ADC_CHANNEL_IN6
+#define KNOCK_PIN_CH1 Gpio::A6
 
 // Sample rate & time - depends on the exact MCU
 #define KNOCK_SAMPLE_TIME ADC_SAMPLE_84
