@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <msq xmlns="http://www.msefi.com/:msq">
     <page/>
-    <page number="0" size="24340">
+    <page number="0" size="23748">
         <constant name="accelEnrichmentMode">"MS Adder"</constant>
         <constant name="accelerometerCsPin">"NONE"</constant>
         <constant name="accelerometerCsPinMode">"default"</constant>
@@ -1047,7 +1047,7 @@
         <constant digits="0" name="etbRevLimitRange" units="rpm">250.0</constant>
         <constant digits="0" name="etbRevLimitStart" units="rpm">0.0</constant>
         <constant name="EtbSentInput">"None"</constant>
-        <constant digits="1" name="etbSplit" units="%">5.0</constant>
+        <constant digits="1" name="etbSplit" units="%">10.0</constant>
         <constant digits="4" name="etbWastegatePid_dFactor" units="">0.0</constant>
         <constant digits="4" name="etbWastegatePid_iFactor" units="">0.0</constant>
         <constant digits="0" name="etbWastegatePid_maxValue" units="">60.0</constant>
@@ -2259,145 +2259,89 @@
         <constant name="ignKeyAdcChannel">"Disabled"</constant>
         <constant digits="0" name="ignKeyAdcDivider" units="">0.0</constant>
         <constant name="ignOverrideMode">"None"</constant>
-        <constant cols="1" digits="0" name="ignTrimLoadBins" rows="8">
+        <constant cols="1" digits="0" name="ignTrimLoadBins" rows="4">
          20.0
-         31.0
-         42.0
-         54.0
-         65.0
-         77.0
-         88.0
+         50.0
+         80.0
          100.0
 </constant>
-        <constant cols="1" digits="0" name="ignTrimRpmBins" rows="8">
-         650.0
-         800.0
-         1700.0
-         2600.0
-         3500.0
-         4400.0
-         5300.0
+        <constant cols="1" digits="0" name="ignTrimRpmBins" rows="4">
+         1000.0
+         3000.0
+         5000.0
          7000.0
 </constant>
-        <constant cols="8" digits="1" name="ignTrims10_table" rows="8">
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+        <constant cols="4" digits="1" name="ignTrims10_table" rows="4">
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
 </constant>
-        <constant cols="8" digits="1" name="ignTrims11_table" rows="8">
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+        <constant cols="4" digits="1" name="ignTrims11_table" rows="4">
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
 </constant>
-        <constant cols="8" digits="1" name="ignTrims12_table" rows="8">
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+        <constant cols="4" digits="1" name="ignTrims12_table" rows="4">
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
 </constant>
-        <constant cols="8" digits="1" name="ignTrims1_table" rows="8">
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+        <constant cols="4" digits="1" name="ignTrims1_table" rows="4">
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
 </constant>
-        <constant cols="8" digits="1" name="ignTrims2_table" rows="8">
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+        <constant cols="4" digits="1" name="ignTrims2_table" rows="4">
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
 </constant>
-        <constant cols="8" digits="1" name="ignTrims3_table" rows="8">
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+        <constant cols="4" digits="1" name="ignTrims3_table" rows="4">
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
 </constant>
-        <constant cols="8" digits="1" name="ignTrims4_table" rows="8">
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+        <constant cols="4" digits="1" name="ignTrims4_table" rows="4">
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
 </constant>
-        <constant cols="8" digits="1" name="ignTrims5_table" rows="8">
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+        <constant cols="4" digits="1" name="ignTrims5_table" rows="4">
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
 </constant>
-        <constant cols="8" digits="1" name="ignTrims6_table" rows="8">
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+        <constant cols="4" digits="1" name="ignTrims6_table" rows="4">
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
 </constant>
-        <constant cols="8" digits="1" name="ignTrims7_table" rows="8">
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+        <constant cols="4" digits="1" name="ignTrims7_table" rows="4">
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
 </constant>
-        <constant cols="8" digits="1" name="ignTrims8_table" rows="8">
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+        <constant cols="4" digits="1" name="ignTrims8_table" rows="4">
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
 </constant>
-        <constant cols="8" digits="1" name="ignTrims9_table" rows="8">
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+        <constant cols="4" digits="1" name="ignTrims9_table" rows="4">
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0
 </constant>
         <constant name="imuType">"None"</constant>
         <constant digits="0" name="initialIgnitionCutPercent" units="%">0.0</constant>
@@ -2781,7 +2725,7 @@
          0.0 -2000.0 2388.89 12000.0 1800000.0 210000.0 10000.0 0.0 0.0 0.0 -9.223372036854775E12 1.4013000000000002E-40 164.5 1.6815600000000002E-40 5.60519E-43 1.4012999999999999E-43
          8750.0 2.35135E-36 2.75787E-37 1.54143E-41 0.0 600.0 7.10543E-13 0.0 5000.0 8000.0 200.0 533.3333 9.2233720368547763E17 1.23314E-41 8.39111E-37 0.0
          0.0 0.0 100000.0 7.00649E-42 0.0 0.0 0.0 5.32493E-42 0.0 0.0 0.0 4.59177E-38 3.3245E-36 300.0 0.0 0.0
-         0.0 0.0 0.0 999.6 500.0 1999.2 1.79366E-39 0.0 0.0 50000.0 0.0 4.2039E-41 0.0 0.0 1.10422E-39 2.64667E-24
+         0.0 0.0 0.0 999.6 500.0 1999.2 3.58732E-39 0.0 0.0 50000.0 0.0 4.2039E-41 0.0 0.0 1.10422E-39 2.64667E-24
          0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
          2.35099E-36 0.0 0.0 0.0 3.58732E-41 0.0 7.17465E-41 0.0 0.0 9.183689999999999E-37 9.183549999999999E-39 0.0 0.0 0.0 5.59981E-38 1.37753E-38
          0.0 0.0 0.0 7.17465E-41 9.10844E-42 9.183549999999999E-39 3.15914E-36 0.0 0.0 2.35099E-36 0.0 0.0 0.0 0.0 0.0 9.2233720368547763E17
@@ -5187,7 +5131,7 @@ end</constant>
 </constant>
         <constant name="yesUnderstandLocking">"no"</constant>
     </page>
-    <versionInfo firmwareInfo="20250810" nPages="1" signature="rusEFI main.2025.08.12.mazduino.2070105437" version="5.0"/>
+    <versionInfo firmwareInfo="20250810" nPages="1" signature="rusEFI main.2025.08.12.mazduino.2607620935" version="5.0"/>
     <bibliography author="rusEFI 20250810" writeDate="date"/>
     <settings/>
     <userComments/>
