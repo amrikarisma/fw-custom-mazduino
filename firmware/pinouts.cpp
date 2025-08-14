@@ -57,15 +57,15 @@ static void setBoard_ua4c_pinout() {
 }
 
 static void setBoard_compact_pinout() {
-	engineConfiguration->injectionPins[0] = Gpio::B15;
-	engineConfiguration->injectionPins[1] = Gpio::D8;
-	engineConfiguration->injectionPins[2] = Gpio::D9;
-	engineConfiguration->injectionPins[3] = Gpio::D10;
+	engineConfiguration->injectionPins[0] = Gpio::D8;
+	engineConfiguration->injectionPins[1] = Gpio::B15;
+	engineConfiguration->injectionPins[2] = Gpio::B14;
+	engineConfiguration->injectionPins[3] = Gpio::B13;
 	engineConfiguration->injectionPins[4] = Gpio::Unassigned;
 	engineConfiguration->injectionPins[5] = Gpio::Unassigned;
 
 	engineConfiguration->ignitionPins[0] = Gpio::E15;
-	engineConfiguration->ignitionPins[1] = Gpio::E4;
+	engineConfiguration->ignitionPins[1] = Gpio::E14;
 	engineConfiguration->ignitionPins[2] = Gpio::D13;
 	engineConfiguration->ignitionPins[3] = Gpio::E5;
 	engineConfiguration->ignitionPins[4] = Gpio::Unassigned;
