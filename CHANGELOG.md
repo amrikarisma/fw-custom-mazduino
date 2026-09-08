@@ -45,6 +45,7 @@ All notable changes to Mazduino firmware are documented here.
 - Root `meta-info.env` (SHORT_BOARD_NAME=mazduino): generic board identifier removed; all builds now reference a named board variant
 
 ### Fixed
+- mazduino-lite: onboard LPS25 barometric sensor was never configured, so `initBaro()` had no pins to talk to and barometric correction silently fell back to a fixed value. Set `lps25BaroSensorScl`/`Sda` to PB10/PB11, matching the schematic (BARO_SCL/BARO_SDA) and mazduino-core. Existing tunes keep their stored values, so this takes effect on a config reset or a fresh tune
 - mazduino-mini6ch: PD14 pin conflict between the stepper driver enable (`stepperEnablePin`, MCU-ENBL → DRV8825 EN via JP6 manual-enable jumper) and the critical-error LED. mini6ch never overrode `LED_CRITICAL_ERROR_BRAIN_PIN`, so it inherited the rusEFI default of PD14 and claimed the pin before the stepper could use it. Moved the critical-error LED to the dedicated onboard PB4 LED (mini6ch has 3 LEDs — PB4, PB6, PB7 — with PB7 reserved for comms), freeing PD14 for stepper enable. Requires a firmware rebuild
 - Root `board_configuration.cpp`: removed forward declaration of `customBoardTsAction` which caused undefined reference linker error in CI unit test build
 - `EFI_EMBED_INI_MSD=FALSE` on mega100-512: the embedded TunerStudio INI file was contributing approximately 155KB to the firmware binary; disabling it reduced firmware from 488KB to 271KB

@@ -60,6 +60,11 @@ static void customBoardDefaultConfiguration() {
     engineConfiguration->canTxPin = Gpio::D1;
     engineConfiguration->canRxPin = Gpio::D0;
 
+    // Onboard LPS25 baro sensor: PB10 = BARO_SCL, PB11 = BARO_SDA. Same part and
+    // same pins as mazduino-core. initBaro() skips this if an analog baro is set.
+    engineConfiguration->lps25BaroSensorScl = Gpio::B10;
+    engineConfiguration->lps25BaroSensorSda = Gpio::B11;
+
     // SD card - SPI3
     engineConfiguration->is_enabled_spi_3  = true;
     engineConfiguration->spi3mosiPin        = Gpio::C12;
